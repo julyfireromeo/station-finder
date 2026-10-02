@@ -3,10 +3,7 @@ import csv
 import pgeocode
 
 def distancefinder(lon1, lat1, lon2, lat2):
-    #earth's radius
-    rad = 3958.8
-    p = float(math.pi)
-    circ = 2.0*rad*p
+    circ = 24901.461 
 
     #conversions
     deltaLon = math.radians(lon2 - lon1)
