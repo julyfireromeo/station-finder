@@ -2,28 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Find Your Station</title>
+       <title>Find Your Nearest Train Station</title>
     </head>
-
     <body>
-        <h1>Let's find your nearest Amtrak Station!</h1>
-        <p>You live near <strong>{{ town_name }}</strong>.</p>
+     <h1>Do <i>You</i> Like Trains?</h1>
+     
+     <!--action directs form to send data back main route
+     and method prevents data from being shown in URL (goes in background)-->
+     <form action="/" method="POST">
+        <label for="zipcode">Enter your Zip Code:</label>
+        <input type="text" id="zipcode" name="zipcode" required>
+        <button type="submit">Find Station</button>
 
-        {% if station_data %}
-            <div class="station-card">
-                <h2>{{ station_data['Name'] }}</h2>
-                <ul>
-                    <li><strong>Location: </strong>{{ station_data['Location'] }}</li>
-                    <li><strong>Address: </strong>{{ station_data['Address'] }}</li>
-                    <li><strong>Distance: </strong>{{ station_data['Minimum Distance to You'] }} miles</li>
-                </ul>
-            </div>
-
-        {% else %}
-            <p>Sorry, we couldn't find a station near that zipcode.</p>
-        {% end if %}
-        <br>
-        <a href="/">Search another zip code</a>
-
-    </body> 
-</html>
+     </form>
+    
+    </body>
