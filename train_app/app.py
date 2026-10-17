@@ -10,7 +10,7 @@ def home():
 
         if user_zip:
             lat = logic.zipcodetolat(user_zip)
-            lon = logic.zipcodetolong(user_zip)
+            lon = logic.zipcodetolon(user_zip)
             town = logic.zipcodetotownish(user_zip)
 
             nearest_station = logic.stationfinder(lat,lon)
