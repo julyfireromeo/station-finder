@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Find Your Station</title>
+    </head>
+
+    <body>
+        <h1>Let's find your nearest Amtrak Station!</h1>
+        <p>You live near <strong>{{ town_name }}</strong>.</p>
+
+        {% if station_data %}
+            <div class="station-card">
+                <h2>{{ station_data['Name'] }}</h2>
+                <ul>
+                    <li><strong>Location: </strong>{{ station_data['Location'] }}</li>
+                    <li><strong>Address: </strong>{{ station_data['Address'] }}</li>
+                    <li><strong>Distance: </strong>{{ station_data['Minimum Distance to You'] }} miles</li>
+                </ul>
+            </div>
+
+        {% else %}
+            <p>Sorry, we couldn't find a station near that zipcode.</p>
+        {% end if %}
+        <br>
+        <a href="/">Search another zip code</a>
+
+    </body> 
+</html>
